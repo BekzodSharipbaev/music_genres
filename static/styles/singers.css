@@ -1,0 +1,11 @@
+.container {
+  max-width: 1000px;
+}
+
+.singers-div {
+  background-color: black;
+}
+
+.singers-div > * {
+  background-color: rgb(176, 143, 230);
+}

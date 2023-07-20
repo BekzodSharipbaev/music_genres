@@ -1,0 +1,13 @@
+.container {
+  max-width: 1200px;
+}
+
+.singer-box {
+  background-color: var(--yellow);
+}
+
+@media screen and (min-width: 768px) {
+  .singer-photo-box {
+    max-width: 40%;
+  }
+}

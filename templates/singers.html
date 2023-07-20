@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'styles/singers.css' %}">
+{% endblock link %}
+{% block title %}
+  {{ category }}
+{% endblock title %}
+{% block content %}
+  <section class="py-5 singers-sec">
+    <div class="singers-div p-5 container d-flex flex-column row-gap-5">
+      {% for singer in singers %}
+        <div class="row p-4 justify-content-md-between justify-content-center align-items-center">
+          <div class="col-12 col-md-3 p-0 me-2 d-flex justify-content-center">
+            <img class="img-fluid w-100" src="{{ singer.photo.url }}" alt="">
+          </div>
+          <div class="col-md flex-grow-1 d-flex flex-column row-gap-3 align-self-start">
+            <h2 class="mt-3">
+              {{ singer.nickname }}
+            </h2>
+            <p class="short-info lead fw-medium">
+              {{ singer.about|linebreaks|truncatewords:30 }}
+            </p>
+          </div>
+          <div class="col-md flex-grow-0 align-self-end d-flex justify-content-end">
+            <a class="btn btn-dark btn-lg rounded-0 px-4 py-2" href="{{ singer.get_absolute_url }}">SHOW</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock content %}

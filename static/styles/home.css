@@ -1,0 +1,28 @@
+.links-fixed {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links-box {
+  width: 90%;
+  max-width: 900px;
+  min-width: 200px;
+  padding: 10em 0;
+  margin: auto;
+}
+
+.genre-link {
+  text-decoration: none;
+}
+
+.genre-link:hover {
+  text-decoration: underline;
+}
+

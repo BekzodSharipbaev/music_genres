@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ singer.title }}
+{% endblock title %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'styles/singer.css' %}">
+{% endblock link %}
+{% block content %}
+  <section>
+    <div class="container p-md-5">
+      <div class="singer-box p-4 p-lg-5">
+        <div class="float-md-start singer-photo-box pb-3 pb-md-0 pe-md-4">
+          <img class="img-fluid w-100" src="{{ singer.photo.url }}" alt="{{ singer.nickname }}">
+        </div>
+        <div>
+          <h1 class="pt-2 pb-3 text-center text-md-start">
+            {{ singer.nickname }}
+          </h1>
+          <h2 class="h3">
+            {{ singer.fullname }}
+          </h2>
+          <div>
+            {{ singer.about|linebreaks }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+

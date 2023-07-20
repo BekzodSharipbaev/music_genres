@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Home
+{% endblock title %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+{% endblock link %}
+{% block content %}
+  <main>
+    <section class="links-fixed">
+      <div class="links-box">
+        <div class="d-flex flex-column gap-3 text-center">
+          <div>
+            <a class="h2 genre-link" href="{% url 'hiphop:home' %}">HipHop</a>
+          </div>
+          <div>
+            <a class="h2 genre-link" href="{% url 'pop:home' %}">Pop</a>
+          </div>
+          <div>
+            <a class="h2 genre-link" href="{% url 'rock:home' %}">Rock</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}
